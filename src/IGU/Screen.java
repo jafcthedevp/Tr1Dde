@@ -25,11 +25,8 @@ public class Screen {
         comboBox1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Obtener la categoría seleccionada
                 String categoria = (String) comboBox1.getSelectedItem();
-                // Obtener la pensión asociada a la categoría
                 double pension = obtenerPension(categoria);
-                // Mostrar la pensión en el textField2
                 textField2.setText(String.valueOf(pension));
             }
         });
@@ -37,12 +34,9 @@ public class Screen {
         calcularButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Obtener el porcentaje de descuento ingresado
                 double descuento = Double.parseDouble(textField5.getText());
-                // Obtener la pensión actual y calcular la nueva pensión
                 double pensionActual = Double.parseDouble(textField2.getText());
                 double nuevaPension = pensionActual - (pensionActual * descuento / 100);
-                // Mostrar la nueva pensión en el textField3
                 textField3.setText(String.valueOf(nuevaPension));
             }
         });
